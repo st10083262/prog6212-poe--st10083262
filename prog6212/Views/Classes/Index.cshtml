@@ -1,0 +1,76 @@
+﻿@model IEnumerable<progfinal11111.Models.Class>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Module Information</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModuleName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Credits)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hoursperweek)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weekspersemester)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hoursspent)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModuleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Credits)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hoursperweek)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weekspersemester)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hoursspent)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ModuleCode">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ModuleCode">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ModuleCode">Delete</a>
+            </td>
+        </tr>
+
+
+}
+    </tbody>
+</table>
